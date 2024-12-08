@@ -44,9 +44,6 @@ Run Flask Server: Run the Python Flask server that handles the transcription:
 cd YoutubeIntro/python_scripts
 python get_transcript.py
 ```
-This will start the Flask API on http://127.0.0.1:5000.
-
-The Flask API provides an endpoint /get-transcript which accepts a POST request with the video_url (path to the uploaded video) and returns the transcribed text.
 
 ##### 3. Backend Setup (Laravel)
 Install Composer Dependencies: In the project root directory, run:
