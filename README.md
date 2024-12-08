@@ -31,12 +31,65 @@ Clone this repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/youtube-intro-generator.git
 cd YoutubeIntro
+```
 
 ##### 2. Python Setup
 Install Python Dependencies: Ensure you have Python installed, then install packages:
 ```bash
 pip install -r requirements.txt
+```
 
 Run Flask Server: Run the Python Flask server that handles the transcription:
 ```bash
-python 
+cd python_scripts
+python get_transcript.py
+```
+This will start the Flask API on http://127.0.0.1:5000.
+
+The Flask API provides an endpoint /get-transcript which accepts a POST request with the video_url (path to the uploaded video) and returns the transcribed text.
+
+##### 3. Backend Setup (Laravel)
+Install Composer Dependencies: In the project root directory, run:
+```bash
+cd ../
+composer install
+```
+
+Set up the .env File: Copy the .env.example to .env:
+```bash
+cp .env.example .env
+```
+
+Update the following environment variables:
+
+OPENAI_API_KEY=your-openai-api-key
+Ensure that the Python Flask server URL is correctly configured in the IntroController (http://127.0.0.1:5000/get-transcript).
+
+Start the Laravel Development Server: Run the following to start the backend server:
+```bash
+php artisan serve
+```
+
+##### 4. Frontend Setup (Vue.js)
+Install Node.js Dependencies: In the project directory, run:
+```bash
+npm install
+```
+Build the Frontend: To build the frontend assets:
+```bash
+npm run dev
+```
+
+### Usage
+##### 1. Open the Application: Visit http://localhost:8000 in your browser.
+
+##### 2. Upload a Video:
+Use the file upload interface to upload a video file.
+The video will be processed and transcribed by the Flask server using Whisper (Python).
+
+##### 3. Generate YouTube Intro:
+Once the transcription is complete, the Laravel API will send the transcript to OpenAI, which will generate a catchy YouTube intro based on the content.
+The generated intro will be displayed on the page.
+
+### Processing Time Note
+For videos up to 20 minutes, the process (transcription and intro generation) may take up to 1 minute to complete. Please be patient as the application processes the video and generates the intro.
