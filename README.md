@@ -35,13 +35,12 @@ git clone https://github.com/yourusername/youtube-intro-generator.git
 ##### 2. Python Setup
 Install Python Dependencies: Ensure you have Python installed, then install packages:
 ```bash
-cd YoutubeIntro
+cd YoutubeIntro/python_scripts
 pip install -r requirements.txt
 ```
 
 Run Flask Server: Run the Python Flask server that handles the transcription:
 ```bash
-cd YoutubeIntro/python_scripts
 python get_transcript.py
 ```
 
