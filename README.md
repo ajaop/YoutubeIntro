@@ -30,18 +30,18 @@ Follow these steps to set up and run the application locally.
 Clone this repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/youtube-intro-generator.git
-cd YoutubeIntro
 ```
 
 ##### 2. Python Setup
 Install Python Dependencies: Ensure you have Python installed, then install packages:
 ```bash
+cd YoutubeIntro
 pip install -r requirements.txt
 ```
 
 Run Flask Server: Run the Python Flask server that handles the transcription:
 ```bash
-cd python_scripts
+cd YoutubeIntro/python_scripts
 python get_transcript.py
 ```
 This will start the Flask API on http://127.0.0.1:5000.
@@ -51,7 +51,7 @@ The Flask API provides an endpoint /get-transcript which accepts a POST request 
 ##### 3. Backend Setup (Laravel)
 Install Composer Dependencies: In the project root directory, run:
 ```bash
-cd ../
+cd YoutubeIntro/youtube_intro_backend
 composer install
 ```
 
@@ -73,6 +73,7 @@ php artisan serve
 ##### 4. Frontend Setup (Vue.js)
 Install Node.js Dependencies: In the project directory, run:
 ```bash
+cd YoutubeIntro/youtube_intro_frontend
 npm install
 ```
 Build the Frontend: To build the frontend assets:
