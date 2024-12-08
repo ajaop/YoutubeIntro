@@ -63,6 +63,7 @@ cp .env.example .env
 Update the following environment variables:
 
 OPENAI_API_KEY=your-openai-api-key
+
 Ensure that the Python Flask server URL is correctly configured in the IntroController (http://127.0.0.1:5000/get-transcript).
 
 Start the Laravel Development Server: Run the following to start the backend server:
